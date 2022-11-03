@@ -7,15 +7,20 @@ FROM
     
 
 -- Clear moving average table.
-TRUNCATE TABLE [workspace].[dbo].[FRED_unemployment_moving_average];
+-- TRUNCATE TABLE [workspace].[dbo].[FRED_unemployment_moving_average];
+DROP TABLE [workspace].[dbo].[FRED_unemployment_moving_average];
 
--- Calculate the moving 5-month average unemployment rate.
+
+-- Use 5-month moving window to generate time-series average & standard deviation unemployment rate.
 SELECT
     [DATE],
     [UNRATE],
     AVG([UNRATE]) OVER (
         ORDER BY [DATE]
-        ROWS BETWEEN 2 PRECEDING AND 7 FOLLOWING) AS [AverageUnrateFiveYearMoving]
+        ROWS BETWEEN 2 PRECEDING AND 7 FOLLOWING) AS [AverageUnrateFiveYearMoving],
+    STDEV([UNRATE]) OVER (
+        ORDER BY [DATE]
+        ROWS BETWEEN 2 PRECEDING AND 7 FOLLOWING) AS [StdDevUnrateFiveYearsMoving]
 
 INTO [FRED_unemployment_moving_average]
     
@@ -24,7 +29,8 @@ FROM
 
 
 -- Clear dateparts table.
-TRUNCATE TABLE [workspace].[dbo].[FRED_unemployment_month_year_dateparts];
+-- TRUNCATE TABLE [workspace].[dbo].[FRED_unemployment_month_year_dateparts];
+DROP TABLE [workspace].[dbo].[FRED_unemployment_month_year_dateparts];
 
 
 -- Show unemployment rate by month & year.
