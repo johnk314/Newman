@@ -42,6 +42,6 @@ FROM
 -- HAVING COUNT(*) >= 2
 -- ORDER BY COUNT(*) DESC;
 
--- QUESTION #1: Who are the top 10 customers (ShipName) by total sales (ExpandedPrice) each year?
+-- QUESTION #1: Who are the top 10 customers (ShipName) by total sales (ExpandedPrice) by year (OrderYear)?
 SELECT *
 FROM OrdersProducts;
