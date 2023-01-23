@@ -1,6 +1,6 @@
 -- Aggregate 
+WITH OrdersProducts AS (
 SELECT 
-    -- O.*,
     CAST(O.OrderDate AS DATE) AS OrderDate,
     DATEPART(year, O.OrderDate) AS OrderYear,
     DATEPART(month, O.OrderDate) AS OrderMonth,
@@ -23,5 +23,7 @@ FROM
         ON O.OrderID = OD.OrderID
             LEFT JOIN [Northwind].[dbo].[Products] AS P
             ON OD.ProductID = P.ProductID
+)
 
-ORDER BY OrderDate DESC;
+SELECT *
+FROM OrdersProducts;
