@@ -1,0 +1,1 @@
+-- Test that the Northwind database installed correctly.
