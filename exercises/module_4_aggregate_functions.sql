@@ -5,6 +5,7 @@
 -- Deconstruct datetime into year, month, & week.
 WITH OrdersProducts AS (
 SELECT 
+    -- Orders
     CAST(O.OrderDate AS DATE) AS OrderDate,
     DATEPART(year, O.OrderDate) AS OrderYear,
     DATEPART(month, O.OrderDate) AS OrderMonth,
@@ -12,8 +13,10 @@ SELECT
     O.ShipName,
     O.ShipCity,
 
+    -- Product
     P.ProductName,
 
+    -- Order Details
     OD.OrderID,
     OD.UnitPrice,
     OD.Quantity,
