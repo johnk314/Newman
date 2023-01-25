@@ -32,7 +32,7 @@ FROM
 -- NOTE: When using CTE's (WITH <TABLE> AS ...), as above, only a single SELECT statement can follow.
 
 
--- EXAMPLE QUESTION: "What cities (ShipCity) received the greatest number of products (ProductName) in 1997?"
+-- EXAMPLE QUESTION: What cities (ShipCity) received the greatest number of products (ProductName) in 1997?
 -- SELECT TOP(10)
 --     ShipName,
 --     ProductName,
@@ -48,3 +48,7 @@ FROM
 -- QUESTION #1: Who are the top 10 customers (ShipName) by total sales (ExpandedPrice) by year (OrderYear)?
 SELECT *
 FROM OrdersProducts;
+
+-- QUESTION #2: What are the best-selling products (ProductName) by total sales (ExpandedPrice) each year (OrderYear)?
+-- SELECT *
+-- FROM OrdersProducts;
