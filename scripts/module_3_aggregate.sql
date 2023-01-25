@@ -1,3 +1,6 @@
+-- Create a common-table expression (CTE). 
+-- NOTE: Makes "OrdersProducts" available to query.
+
 -- Sum product orders for all time-frames.
 -- Deconstruct datetime into year, month, & week.
 WITH OrdersProducts AS (
