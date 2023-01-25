@@ -1,7 +1,8 @@
--- Create a common-table expression (CTE). 
--- NOTE: Makes "OrdersProducts" available to query.
+-- Set up query for questions below. Please read entire script & run as-is before beginning questions.
 
--- Sum product orders for all time-frames.
+-- Create a common-table expression (CTE).
+-- NOTE: Makes "OrdersProducts" available to query below.
+-- Sum product orders for all avilable time-frames (1996-1998).
 -- Deconstruct datetime into year, month, & week.
 WITH OrdersProducts AS (
 SELECT 
@@ -32,7 +33,7 @@ FROM
             ON OD.ProductID = P.ProductID
 )
 
--- NOTE: When using CTE's (WITH <TABLE> AS ...), as above, only a single SELECT statement can follow.
+-- NOTE: When using CTE's (WITH <TABLE> AS ...), as above, only a single SELECT statement can follow. Use comments to enable/disable code below.
 
 
 -- EXAMPLE QUESTION: What cities (ShipCity) received the greatest number of products (ProductName) in 1997?
