@@ -27,7 +27,7 @@ SELECT
     ,[ShipCountry]
 
 FROM [Northwind].[dbo].[Orders] AS O
-WHERE O.[OrderID] IN(10248); -- Use a sub-query to filter for Orders placed by Londoners.
+WHERE O.[EmployeeID] IN(10248); -- Use a sub-query to filter for Orders placed by Londoners.
 
 
 -- QUESTION #2: Which Orders were placed by Employees who are Sales Representitives (Title)?
