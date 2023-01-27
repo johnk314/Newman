@@ -17,7 +17,7 @@ CREATE VIEW EmployeesOrdersCustomers AS
 
     -- SELECT 
     --     O.OrderID
-    --     ,O.
+    --     ,O.*
     --     ,S.*
 
     -- FROM [Northwind].[dbo].[Orders] AS O
