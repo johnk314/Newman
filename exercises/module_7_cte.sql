@@ -1,4 +1,4 @@
--- An example Common Table Expression (CTE).
+-- An example Common Table Expression (CTE) to show the syntax.
 -- Run the query as-is to see the results of the example.
 WITH OrdersShippers AS (
     SELECT 
@@ -6,8 +6,8 @@ WITH OrdersShippers AS (
 
         ,S.CompanyName AS ShipperName
 
-        ,CAST(O.OrderDate AS DATE) AS OrderDate
-        ,CAST(O.ShippedDate AS DATE) AS ShippedDate
+        ,CAST(O.OrderDate AS DATE) AS OrderDate -- Keep only date, remove time detail.
+        ,CAST(O.ShippedDate AS DATE) AS ShippedDate -- Keep only date, remove time detail.
         ,O.Freight
         ,O.ShipName
         ,O.ShipAddress
@@ -17,38 +17,23 @@ WITH OrdersShippers AS (
     FROM [Northwind].[dbo].[Orders] AS O
     LEFT JOIN [Northwind].[dbo].[Shippers] AS S
         ON O.ShipVia = S.ShipperID
-)
+    )
 
--- EXAMPLE QUESTION: Which shipper has carried the most orders each year?
+-- EXAMPLE QUESTION: Which Shipper has carried the most Orders?
 SELECT 
-    DATEPART(year, OS.ShippedDate) AS ShippedYear
+    OS.ShipperName
     ,COUNT(*) AS ShipCount
-    ,OS.ShipperName
     
 FROM 
     OrdersShippers as OS
 GROUP BY 
-    OS.ShipperName,
-    DATEPART(year, OS.ShippedDate)
+    OS.ShipperName
 ORDER BY 
-    DATEPART(year, OS.ShippedDate) DESC
-    ,COUNT(*) DESC;
+    COUNT(*) DESC;
+----------------------------------------------------------------------------------------------------
 
 
--- QUESTION #1: Create a CTE to relate Customers to Employees using the Orders table as a common element.
--- WITH EmployeesOrdersCustomers AS (
--- SELECT 
---     *
-    
-
--- FROM
---     [Northwind].[dbo].[Orders] AS O
---     -- LEFT JOIN Customers AS C
---     -- LEFT JOIN Employees AS E
--- )
-
--- QUESTION #1: Which Employees placed Orders for the most Customers?
--- HINT: We're interested in the number of orders, not the dollar-value.
--- HINT: We're interest in total orders, not by year.
--- SELECT *
--- FROM EmployeesOrdersCustomers;
+-- QUESTION #1: Create a CTE & Select query to show the number of orders each Shipper carried each month of each year.
+-- HINT: You will write 2 queries for this question, just like the example.
+-- HINT: Use DATEPART() function to identify the month & year of each ShippedDate. Google "TSQL Datepart" for help.
+-- HINT: You will have to use the DATEPART() function in the SELECT, GROUP BY, & ORDER BY clauses.
