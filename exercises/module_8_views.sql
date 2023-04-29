@@ -46,13 +46,15 @@ CREATE VIEW EmployeesOrdersCustomers AS
     FROM 
         [Northwind].[dbo].[Orders] AS O
             LEFT JOIN Customers AS C
-            LEFT JOIN Employees AS E;
+            ON O.CustomerID = C.CustomerID
+                LEFT JOIN Employees AS E
+                ON O.EmployeeID = E.EmployeeID;
 
 -- If needed, delete the EmployeesOrdersCustomers view.
 -- DROP VIEW EmployeesOrdersCustomers;
 
-SELECT *
-FROM EmployeesOrdersCustomers;
+-- SELECT *
+-- FROM EmployeesOrdersCustomers;
 
 -- QUESTION #2: How many rows are in the Orders table? How many rows are in the EmployeesOrdersCustomers view?
 
