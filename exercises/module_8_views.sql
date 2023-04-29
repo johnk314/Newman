@@ -1,7 +1,8 @@
 -- QUESTION #1: Write a query to join & denormalize/flatten Product, Category, & Supplier tables. Create a view of the join named EmployeesOrdersCustomers.
+-- HINT: Run this query as-is to create the EmployeesOrdersCustomers view.
 -- HINT: You can see the view under CONNECTIONS > SERVERS > localhost > Databases > Northwind > Views.
 -- HINT: You may need to refresh the database/views folder.
--- HINT: Once the view has been created, comment out that code & move on to QUESTION #2.
+-- HINT: Once the view has been created, comment out the CREATE VIEW code & move on to QUESTION #2.
 
 -- Set current database to Northwind. (otherwise the view will be created in System Databases > Master)
 USE Northwind 
@@ -53,10 +54,14 @@ CREATE VIEW EmployeesOrdersCustomers AS
 -- If needed, delete the EmployeesOrdersCustomers view.
 -- DROP VIEW EmployeesOrdersCustomers;
 
+-- QUESTION #2: How many rows are in the Orders table? How many rows are in the EmployeesOrdersCustomers view?
+
+-- SELECT *
+-- FROM Orders;
+
 -- SELECT *
 -- FROM EmployeesOrdersCustomers;
 
--- QUESTION #2: How many rows are in the Orders table? How many rows are in the EmployeesOrdersCustomers view?
 
 
 -- QUESTION #3: Which Customers (CompanyName) placed the most orders in 1998?
