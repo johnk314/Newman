@@ -5,7 +5,7 @@
 -- HINT: Once the view has been created, comment out the CREATE VIEW code & move on to QUESTION #2.
 
 -- Set current database to Northwind. (otherwise the view will be created in System Databases > Master)
-USE Northwind 
+USE Northwinds
 GO
 
 -- Create view for question #1.
@@ -45,7 +45,7 @@ CREATE VIEW EmployeesOrdersCustomers AS
         E.Country AS EmployeeCountry
 
     FROM 
-        [Northwind].[dbo].[Orders] AS O
+        [Northwinds].[dbo].[Orders] AS O
             LEFT JOIN Customers AS C
             ON O.CustomerID = C.CustomerID
                 LEFT JOIN Employees AS E

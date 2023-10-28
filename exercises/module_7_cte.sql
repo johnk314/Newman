@@ -14,8 +14,8 @@ WITH OrdersShippers AS (
         ,O.ShipCity
         ,O.ShipPostalCode
         
-    FROM [Northwind].[dbo].[Orders] AS O
-    LEFT JOIN [Northwind].[dbo].[Shippers] AS S
+    FROM [Northwinds].[dbo].[Orders] AS O
+    LEFT JOIN [Northwinds].[dbo].[Shippers] AS S
         ON O.ShipVia = S.ShipperID
     )
 

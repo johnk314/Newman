@@ -5,7 +5,7 @@ SELECT
     ,[FirstName]
     ,[City]
     ,[Title]
-FROM [Northwind].[dbo].[Employees] AS E
+FROM [Northwinds].[dbo].[Employees] AS E
 WHERE [City] = 'London';
 
 
@@ -26,10 +26,10 @@ SELECT
     ,[ShipPostalCode]
     ,[ShipCountry]
 
-FROM [Northwind].[dbo].[Orders] AS O
+FROM [Northwinds].[dbo].[Orders] AS O
 WHERE O.[EmployeeID] IN(10248); -- Use a sub-query to filter for Orders placed by Londoners.
 
 
 -- QUESTION #2: Which Orders were placed by Employees who are Sales Representitives (Title)?
 SELECT O.*
-FROM [Northwind].[dbo].[Orders] AS O;
+FROM [Northwinds].[dbo].[Orders] AS O;

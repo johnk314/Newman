@@ -1,34 +1,34 @@
 -- Test that the Northwind database installed correctly.
 
 SELECT TOP(10) *
-FROM [Northwind].[dbo].[Categories];
+FROM [Northwinds].[dbo].[Categories];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Customers];
+FROM [Northwinds].[dbo].[Customers];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Employees];
+FROM [Northwinds].[dbo].[Employees];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[EmployeeTerritories];
+FROM [Northwinds].[dbo].[EmployeeTerritories];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Order Details];
+FROM [Northwinds].[dbo].[Order Details];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Orders];
+FROM [Northwinds].[dbo].[Orders];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Products];
+FROM [Northwinds].[dbo].[Products];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Region];
+FROM [Northwinds].[dbo].[Region];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Shippers];
+FROM [Northwinds].[dbo].[Shippers];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Suppliers];
+FROM [Northwinds].[dbo].[Suppliers];
 
 SELECT TOP(10) * 
-FROM [Northwind].[dbo].[Territories];
+FROM [Northwinds].[dbo].[Territories];

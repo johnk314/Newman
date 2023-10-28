@@ -26,10 +26,10 @@ SELECT
     ROUND((OD.UnitPrice * (1 - OD.Discount)) * OD.Quantity, 2) AS ExpandedPrice
 
 FROM 
-    [Northwind].[dbo].[Orders] AS O
-        LEFT JOIN [Northwind].[dbo].[Order Details] AS OD
+    [Northwinds].[dbo].[Orders] AS O
+        LEFT JOIN [Northwinds].[dbo].[Order Details] AS OD
         ON O.OrderID = OD.OrderID
-            LEFT JOIN [Northwind].[dbo].[Products] AS P
+            LEFT JOIN [Northwinds].[dbo].[Products] AS P
             ON OD.ProductID = P.ProductID
 )
 

@@ -10,7 +10,7 @@ SELECT
 
     -- Calculate ExpandedPrice here.
 
-FROM [Northwind].[dbo].[Order Details] AS OD;
+FROM [Northwinds].[dbo].[Order Details] AS OD;
 
 
 -- QUESTION #2: Write a query that includes the fields & calculations from Order Details in QUESTION #1 but also has OrderDate, ShipName, ShipCity, & Product Name attributes for the ExpandedPrice.
@@ -26,5 +26,5 @@ SELECT
 
     -- Calculate ExpandedPrice here.
 
-FROM [Northwind].[dbo].[Order Details] AS OD
+FROM [Northwinds].[dbo].[Order Details] AS OD
     -- LEFT JOIN additional tables here.
